@@ -305,7 +305,7 @@ def main_exp(params):
         os.makedirs(params['folder_name'])
 
     tf.random.set_seed(params['seed'])
-    np.random.set_seed(params['seed'])
+    np.random.seed(params['seed'])
     # data is num_steps x num_examples x n but load flattened version (matrix instead of tensor)
     data_val = np.loadtxt(('./data/%s_val_x.csv' % (params['data_name'])), delimiter=',', dtype=np.float64)
     try_net(data_val, params)
